@@ -18,7 +18,7 @@ function capabilityTags(items) {
 
 function videoButton(campaign, className = "button") {
   if (!campaign.tvcUrl) {
-    return `<span class="${className} button-disabled" aria-disabled="true">TVC link pending</span>`;
+    return "";
   }
 
   return `<a class="${className}" href="${escapeHtml(campaign.tvcUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(campaign.tvcLabel)} ↗</a>`;
@@ -45,7 +45,7 @@ function renderHome() {
         ["Agency", portfolio.agency],
         ["Clients", "Ufone / Telenor / PTCL"],
         ["Based", portfolio.location],
-      ].map(([label, value]) => `
+      ].filter(([, value]) => value).map(([label, value]) => `
         <div class="profile-item">
           <span>${escapeHtml(label)}</span>
           <strong>${escapeHtml(value)}</strong>
@@ -60,22 +60,24 @@ function renderHome() {
     <section class="work section-shell">
       <div class="section-heading">
         <h2>Selected Work</h2>
-        <span>${String(campaigns.length).padStart(2, "0")} Campaigns</span>
+        <span>${String(campaigns.length).padStart(2, "0")} Projects & Collections</span>
+      </div>
+      <div class="work-filters" role="group" aria-label="Filter selected work">
+        ${["All", "Campaigns", "Archive"].map((label) => `<button type="button" data-filter="${label}" aria-pressed="${label === 'All'}">${label}</button>`).join("")}
       </div>
       <div class="work-list">
         ${campaigns.map((campaign) => `
-          <article class="work-row">
+          <article class="work-row" data-category="${escapeHtml(campaign.category)}">
             <button type="button" class="work-link" data-project="${escapeHtml(campaign.slug)}">
-              <span class="work-number">${campaign.number}</span>
+              <span class="work-preview ${campaign.coverImage ? '' : 'work-preview-type'}">
+                ${campaign.coverImage ? `<img src="${escapeHtml(campaign.coverImage)}" alt="${escapeHtml(campaign.coverAlt)}" loading="lazy" decoding="async">` : `<span>${campaign.tvcUrl ? '▶ Film' : 'Case Study'}</span>`}
+              </span>
               <span class="work-copy">
-                <small>${escapeHtml(campaign.client)}</small>
+                <small>${escapeHtml(campaign.client)} · ${escapeHtml(campaign.category)}</small>
                 <strong>${escapeHtml(campaign.title)}</strong>
                 <em>${escapeHtml(campaign.tagline)}</em>
               </span>
-              <span class="work-meta">
-                <span class="work-tags">${capabilityTags(campaign.capabilities.slice(0, 3))}</span>
-                <b aria-hidden="true">→</b>
-              </span>
+              <span class="work-meta"><span class="work-tags">${capabilityTags(campaign.capabilities.slice(0, 3))}</span><b aria-hidden="true">→</b></span>
             </button>
           </article>
         `).join("")}
@@ -101,14 +103,14 @@ function renderProject(campaign) {
     ["02", "Insight", campaign.sections.insight],
     ["03", "Idea", campaign.sections.idea],
     ["04", "Creative Expression", campaign.sections.expression],
-  ];
+  ].filter(([, , copy]) => copy && !copy.startsWith("[PLACEHOLDER]"));
 
   main.innerHTML = `
     <article class="case-study">
-      <header class="case-hero section-shell">
-        <div class="case-placeholder">Campaign hero visual · 1600 × 900</div>
+      <header class="case-hero section-shell ${campaign.coverImage ? 'case-hero-with-art' : ''}">
+        ${campaign.coverImage ? `<a class="case-cover" href="${escapeHtml(campaign.coverImage)}" data-lightbox="${escapeHtml(campaign.coverAlt)}"><img src="${escapeHtml(campaign.coverImage)}" alt="${escapeHtml(campaign.coverAlt)}" fetchpriority="high"><span>View artwork ↗</span></a>` : ''}
         <div class="case-heading">
-          <p class="eyebrow">${escapeHtml(campaign.client)} · ${escapeHtml(campaign.year)}</p>
+          <p class="eyebrow">${escapeHtml(campaign.client)}${campaign.year ? ` · ${escapeHtml(campaign.year)}` : ""}</p>
           <h1>${escapeHtml(campaign.title)}</h1>
           <p>${escapeHtml(campaign.tagline)}</p>
           <div class="tag-row">${capabilityTags(campaign.capabilities)}</div>
@@ -122,7 +124,7 @@ function renderProject(campaign) {
           ["Capabilities", campaign.capabilities.slice(0, 2).join(" / ")],
           ["Client", campaign.client],
           ["Year", campaign.year],
-        ].map(([label, value]) => `
+        ].filter(([, value]) => value).map(([label, value]) => `
           <div class="profile-item">
             <span>${escapeHtml(label)}</span>
             <strong>${escapeHtml(value)}</strong>
@@ -132,8 +134,8 @@ function renderProject(campaign) {
 
       <div class="case-layout">
         <aside class="case-nav" aria-label="Case study sections">
-          ${sectionEntries.map(([number, label]) => `<a href="#section-${number}">${escapeHtml(label)}</a>`).join("")}
-          <a href="#section-05">The Creatives</a>
+          ${sectionEntries.map(([number, label]) => `<a href="#section-${number}" data-section="section-${number}">${escapeHtml(label)}</a>`).join("")}
+          ${campaign.creatives.some((item) => item.image) || campaign.tvcUrl ? `<a href="#section-05" data-section="section-05">${campaign.tvcUrl && !campaign.coverImage ? "Campaign Film" : "The Creatives"}</a>` : ""}
         </aside>
 
         <div class="case-content">
@@ -144,13 +146,15 @@ function renderProject(campaign) {
             </section>
           `).join("")}
 
-          <section id="section-05" class="case-section creatives-section">
-            <div class="case-section-title"><span>05</span><h2>The Creatives</h2></div>
-            <p class="asset-note">Add images and film thumbnails inside <code>assets/campaigns/${escapeHtml(campaign.slug)}</code>.</p>
+          <section id="section-05" class="case-section creatives-section" ${!campaign.creatives.some((item) => item.image) && !campaign.tvcUrl ? "hidden" : ""}>
+            <div class="case-section-title"><span>05</span><h2>${campaign.creatives.some((item) => item.image) ? "The Creatives" : "Campaign Film"}</h2></div>
+
             <div class="creative-grid">
-              ${campaign.creatives.map((creative) => `
+              ${campaign.creatives.filter((creative) => creative.image).map((creative) => `
                 <article class="creative-card">
-                  <div class="creative-placeholder"><span>Campaign creative</span></div>
+                  <a class="creative-image-link" href="${escapeHtml(creative.image)}" data-lightbox="${escapeHtml(creative.label)}" aria-label="View ${escapeHtml(creative.label)} full size">
+                    <img class="creative-image" src="${escapeHtml(creative.image)}" alt="${escapeHtml(creative.label)}" width="${creative.width}" height="${creative.height}" loading="lazy" decoding="async">
+                  </a>
                   <div class="creative-copy">
                     <small>${escapeHtml(creative.type)}</small>
                     <strong>${escapeHtml(creative.label)}</strong>
@@ -216,7 +220,39 @@ function renderFromLocation() {
   else navigateToHome({ updateHash: false });
 }
 
+const lightbox = document.createElement("dialog");
+lightbox.className = "artwork-lightbox";
+lightbox.setAttribute("aria-label", "Campaign artwork viewer");
+lightbox.innerHTML = '<button type="button" class="lightbox-close" aria-label="Close artwork">Close ×</button><img alt=""><p></p>';
+document.body.append(lightbox);
+const closeLightbox = () => lightbox.close();
+lightbox.querySelector("button").addEventListener("click", closeLightbox);
+lightbox.addEventListener("click", (event) => { if (event.target === lightbox) closeLightbox(); });
+lightbox.addEventListener("close", () => { document.body.classList.remove("lightbox-open"); });
+
 document.addEventListener("click", (event) => {
+  const art = event.target.closest("[data-lightbox]");
+  if (art) {
+    event.preventDefault();
+    lightbox.querySelector("img").src = art.href;
+    lightbox.querySelector("img").alt = art.dataset.lightbox;
+    lightbox.querySelector("p").textContent = art.dataset.lightbox;
+    document.body.classList.add("lightbox-open");
+    lightbox.showModal();
+    return;
+  }
+  const section = event.target.closest("[data-section]");
+  if (section) {
+    event.preventDefault();
+    document.getElementById(section.dataset.section)?.scrollIntoView({ behavior: "auto" });
+    return;
+  }
+  const filter = event.target.closest("[data-filter]");
+  if (filter) {
+    document.querySelectorAll("[data-filter]").forEach((button) => button.setAttribute("aria-pressed", String(button === filter)));
+    document.querySelectorAll("[data-category]").forEach((row) => { row.hidden = filter.dataset.filter !== "All" && row.dataset.category !== filter.dataset.filter; });
+    return;
+  }
   const homeTarget = event.target.closest("[data-route='home']");
   if (homeTarget) {
     navigateToHome();

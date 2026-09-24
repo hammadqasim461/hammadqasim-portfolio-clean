@@ -8,7 +8,7 @@ A lightweight personal portfolio built with plain HTML, CSS, and modular JavaScr
 - Campaign content lives in `js/campaigns.js`.
 - Page rendering and navigation live in `js/app.js`.
 - All visual styling lives in `css/styles.css`.
-- Netlify can publish the repository root directly.
+- The website lives in `hammadqasim-portfolio-clean/` in this repository. Set that as the Netlify base directory, or set the publish directory to `hammadqasim-portfolio-clean`.
 
 ## Edit portfolio text
 
@@ -47,13 +47,40 @@ Create folders inside:
 assets/campaigns/project-slug/
 ```
 
-The current cards are visual placeholders. Image support can be added by giving each creative an `image` path and updating the card markup in `js/app.js`.
+Each creative supports `image`, `width`, `height`, `label`, `type`, and `format`. Image paths are relative to the website folder. Set `coverImage` and `coverAlt` on a campaign for its homepage preview and hero artwork.
+
+The galleries preserve the full artwork and open a dialog on click (Escape closes it). Images are lazy-loaded. The four requested campaigns have their titles, short descriptions, and YouTube links, and appear first on the homepage. Existing projects are retained under Archive.
+
+### Upload your images
+
+1. Open the `hammadqasim-portfolio-clean` folder in GitHub.
+2. Upload files under `assets/campaigns/<project-slug>/`.
+3. In `js/campaigns.js`, set the campaign’s `coverImage` and `coverAlt`, then add image objects to `creatives`:
+
+```js
+coverImage: "assets/campaigns/7-crore-ki-calling-family/hero.jpg",
+coverAlt: "Fawad Khan and Ali Zafar — Call More Than Ever Before",
+creatives: [
+  {
+    image: "assets/campaigns/7-crore-ki-calling-family/hero.jpg",
+    width: 1080,
+    height: 1350,
+    label: "Call More Than Ever Before — campaign visual",
+    type: "Key Visual",
+    format: "Digital"
+  }
+]
+```
+
+Replace the example dimensions with the image’s actual size. JPG, PNG, and WebP are supported. The other video campaign folders are `pakistan-ki-pehchaan`, `super-5-legends-selection`, and `garam-masala-data-bohhaat-hai`. Uploading an image alone does not add it to a gallery; add its path to the campaign data as shown above.
+
 
 ## Run locally
 
 Because the website uses JavaScript modules, serve the folder through a local web server:
 
 ```bash
+cd hammadqasim-portfolio-clean
 python -m http.server 8080
 ```
 
@@ -64,6 +91,7 @@ Then open `http://localhost:8080`.
 Use these settings:
 
 - Build command: leave blank
+- Base directory: `hammadqasim-portfolio-clean`
 - Publish directory: `.`
 
 Every push to the connected GitHub repository will publish automatically.
