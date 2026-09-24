@@ -405,8 +405,51 @@ export const campaigns = [
       },
       {
         "type": "Key Visual",
-        "format": "Ufone and PTCL",
-        "label": "Dual-brand master artwork"
+        "format": "Portrait artwork",
+        "label": "The sacrifices behind every small wish",
+        "image": "assets/campaigns/fathers-day/sacrifice-gift.png",
+        "width": 837,
+        "height": 1037
+      },
+      {
+        "type": "Key Visual",
+        "format": "Portrait artwork",
+        "label": "A father placing a child's wishes first",
+        "image": "assets/campaigns/fathers-day/toy-car.png",
+        "width": 837,
+        "height": 1050
+      },
+      {
+        "type": "Key Visual",
+        "format": "Portrait artwork",
+        "label": "Hands that gave more than they ever had",
+        "image": "assets/campaigns/fathers-day/doll-gift.png",
+        "width": 837,
+        "height": 1043
+      },
+      {
+        "type": "Key Visual",
+        "format": "Portrait artwork",
+        "label": "A father's steady hand on the bicycle",
+        "image": "assets/campaigns/fathers-day/bicycle.png",
+        "width": 842,
+        "height": 1051
+      },
+      {
+        "type": "Key Visual",
+        "format": "Portrait artwork",
+        "label": "A father bringing light to every lesson",
+        "image": "assets/campaigns/fathers-day/study-light.png",
+        "width": 821,
+        "height": 1046
+      },
+      {
+        "type": "Key Visual",
+        "format": "Portrait artwork",
+        "label": "A father's hands at his daughter's wedding",
+        "image": "assets/campaigns/fathers-day/wedding-bangles.png",
+        "width": 840,
+        "height": 1042
       },
       {
         "type": "Social Posts",
