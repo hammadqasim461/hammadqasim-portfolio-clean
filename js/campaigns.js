@@ -162,23 +162,6 @@ export const campaigns = [
     "category": "Campaigns"
   },
   {
-    "id": 8,
-    "slug": "super-5-legends-selection",
-    "title": "Super 5 Legends Selection",
-    "tagline": "Ufone’s Super 5 campaign film, centred on “Legends Selection.”",
-    "client": "Ufone",
-    "year": "",
-    "capabilities": [
-      "Film"
-    ],
-    "tvcUrl": "https://www.youtube.com/watch?v=i2TlgAhU8cU",
-    "tvcLabel": "Watch film",
-    "sections": {},
-    "creatives": [],
-    "number": "03",
-    "category": "Campaigns"
-  },
-  {
     "id": 9,
     "slug": "garam-masala-data-bohhaat-hai",
     "title": "Garam Masala — Data Bohhaat Hai",
@@ -403,6 +386,77 @@ export const campaigns = [
     "category": "Archive"
   },
   {
+    "id": 10,
+    "number": "06",
+    "slug": "important-days",
+    "title": "Important Days to Communicate About",
+    "client": "Ufone / PTCL / Telenor",
+    "year": "",
+    "tagline": "I have written copy and given creative direction for almost all national and international days, published as smaller campaigns.",
+    "capabilities": [
+      "Copywriting",
+      "Creative Direction",
+      "Social",
+      "Digital"
+    ],
+    "tvcUrl": "",
+    "tvcLabel": "",
+    "sections": {
+      "context": "I have written copy and given creative direction for almost all national and international days, published as smaller campaigns. Each moment called for its own tone and cultural lens while staying true to the brands behind it."
+    },
+    "creatives": [
+      {
+        "type": "Important Day",
+        "format": "Social post",
+        "label": "Independence Day — Our Land, Our Pride, Our Connection",
+        "image": "assets/campaigns/important-days/independence-day-connection.png",
+        "width": 830,
+        "height": 1027
+      },
+      {
+        "type": "Important Day",
+        "format": "Social post",
+        "label": "International Olympic Day — Celebrating a National Hero",
+        "image": "assets/campaigns/important-days/olympic-day.png",
+        "width": 836,
+        "height": 1031
+      },
+      {
+        "type": "Important Day",
+        "format": "Social post",
+        "label": "Independence Day — More Dreams and More Possibilities",
+        "image": "assets/campaigns/important-days/independence-day-more-for-pakistan.png",
+        "width": 850,
+        "height": 1052
+      },
+      {
+        "type": "Important Day",
+        "format": "Social post",
+        "label": "Defence Day — Pakistan Ki Pehchaan",
+        "image": "assets/campaigns/important-days/defence-day.png",
+        "width": 837,
+        "height": 1032
+      },
+      {
+        "type": "Important Day",
+        "format": "Social post",
+        "label": "Iqbal Day — The Truest Connection",
+        "image": "assets/campaigns/important-days/iqbal-day.png",
+        "width": 828,
+        "height": 1032
+      },
+      {
+        "type": "Important Day",
+        "format": "Social post",
+        "label": "Eid ul Azha — Celebrating Sacrifice and Connection",
+        "image": "assets/campaigns/important-days/eid-ul-azha.png",
+        "width": 842,
+        "height": 1042
+      }
+    ],
+    "category": "Archive"
+  },
+  {
     "id": 7,
     "number": "09",
     "slug": "fathers-day",
@@ -496,7 +550,11 @@ export const campaigns = [
     ],
     "category": "Archive"
   }
-];
+].filter(({ slug }) => ![
+  "minutes-bohhaaat-hain",
+  "super-5",
+  "regional-offer-kvs",
+].includes(slug));
 
 export function getCampaignBySlug(slug) {
   return campaigns.find((campaign) => campaign.slug === slug) ?? null;
