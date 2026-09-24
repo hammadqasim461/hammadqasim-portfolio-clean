@@ -93,7 +93,7 @@ a { color: inherit; }
 .case-section-title { display: flex; align-items: center; gap: 12px; margin-bottom: 26px; }
 .case-section-title span { border: 1px solid var(--gold-deep); background: var(--gold-glow); color: var(--gold); padding: 4px 10px; font-family: var(--mono); font-size: 9px; }
 .case-section-title h2 { font-family: var(--display); font-size: 30px; font-weight: 900; text-transform: uppercase; }
-.case-section > p { max-width: 760px; font-size: 17px; font-weight: 300; line-height: 1.82; }
+.case-section > p { max-width: 760px; font-size: 17px; font-weight: 300; line-height: 1.82; white-space: pre-line; }
 .placeholder-copy { color: var(--faint); font-style: italic; }
 .asset-note { display: inline-block; margin-bottom: 34px; border: 1px dashed var(--line); color: var(--faint); padding: 10px 14px; font-family: var(--mono); font-size: 10px !important; line-height: 1.4 !important; }
 .asset-note code { color: var(--dim); }
@@ -112,6 +112,15 @@ a { color: inherit; }
 .more-work-link strong { font-family: var(--display); font-size: clamp(24px, 3vw, 38px); text-transform: uppercase; }
 .more-work-link span { color: var(--faint); font-family: var(--mono); font-size: 10px; }
 .more-work-link:hover strong { color: var(--gold); }
+
+.awards { padding-top: 96px; padding-bottom: 96px; border-top: 1px solid var(--line); }
+.awards-heading { margin-bottom: 42px; }
+.awards-heading h2 { max-width: 1000px; margin-top: 14px; font-family: var(--display); font-size: clamp(48px, 7vw, 92px); font-weight: 900; line-height: .92; text-transform: uppercase; }
+.awards-heading h2 span { color: var(--gold); }
+.awards-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; align-items: start; }
+.award-card { display: block; overflow: hidden; border: 1px solid var(--line); background: #100d09; }
+.award-card img { display: block; width: 100%; height: auto; transition: transform .35s ease; }
+.award-card:hover img { transform: scale(1.02); }
 
 .site-footer { padding-top: 120px; padding-bottom: 56px; }
 .site-footer h2 { margin-bottom: 32px; font-family: var(--display); font-size: clamp(70px, 11vw, 140px); font-weight: 900; line-height: .88; text-transform: uppercase; }
@@ -184,6 +193,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-
   .work-preview { height: 138px; grid-row: span 2; }
   .work-meta { grid-column: 2; }
   .case-hero-with-art { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .awards-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 560px) {
   .work-link { grid-template-columns: 86px minmax(0,1fr); gap: 12px; }
@@ -193,4 +203,6 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-
   .case-hero-with-art { display: flex; flex-direction: column; align-items: stretch; padding-top: 96px; }
   .case-cover img { max-height: 400px; }
   .case-hero-with-art .case-heading h1 { font-size: 52px; }
+  .awards { padding-top: 70px; padding-bottom: 70px; }
+  .awards-grid { grid-template-columns: 1fr; }
 }

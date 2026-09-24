@@ -8,7 +8,7 @@ A lightweight personal portfolio built with plain HTML, CSS, and modular JavaScr
 - Campaign content lives in `js/campaigns.js`.
 - Page rendering and navigation live in `js/app.js`.
 - All visual styling lives in `css/styles.css`.
-- The website lives in `hammadqasim-portfolio-clean/` in this repository. Set that as the Netlify base directory, or set the publish directory to `hammadqasim-portfolio-clean`.
+- The website files live at the repository root, so no base or publish directory configuration is needed.
 
 ## Edit portfolio text
 
@@ -53,7 +53,7 @@ The galleries preserve the full artwork and open a dialog on click (Escape close
 
 ### Upload your images
 
-1. Open the `hammadqasim-portfolio-clean` folder in GitHub.
+1. Open the repository in GitHub.
 2. Upload files under `assets/campaigns/<project-slug>/`.
 3. In `js/campaigns.js`, set the campaign’s `coverImage` and `coverAlt`, then add image objects to `creatives`:
 
@@ -77,10 +77,9 @@ Replace the example dimensions with the image’s actual size. JPG, PNG, and Web
 
 ## Run locally
 
-Because the website uses JavaScript modules, serve the folder through a local web server:
+Because the website uses JavaScript modules, serve the repository root through a local web server:
 
 ```bash
-cd hammadqasim-portfolio-clean
 python -m http.server 8080
 ```
 
@@ -91,7 +90,7 @@ Then open `http://localhost:8080`.
 Use these settings:
 
 - Build command: leave blank
-- Base directory: `hammadqasim-portfolio-clean`
+- Base directory: (leave blank)
 - Publish directory: `.`
 
 Every push to the connected GitHub repository will publish automatically.

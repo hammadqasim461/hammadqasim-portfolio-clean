@@ -1,4 +1,4 @@
-import { campaigns, getCampaignBySlug, portfolio } from "./campaigns.js";
+import { awardHighlights, campaigns, getCampaignBySlug, portfolio } from "./campaigns.js";
 
 const main = document.querySelector("#main-content");
 const backButton = document.querySelector(".back-button");
@@ -84,6 +84,20 @@ function renderHome() {
       </div>
     </section>
 
+    <section class="awards section-shell" aria-labelledby="awards-title">
+      <div class="awards-heading">
+        <p class="eyebrow">Recognition</p>
+        <h2 id="awards-title">Awards do matter<br>when they are <span>gold.</span></h2>
+      </div>
+      <div class="awards-grid">
+        ${awardHighlights.map((award) => `
+          <a class="award-card" href="${escapeHtml(award.image)}" data-lightbox="${escapeHtml(award.label)}" aria-label="View ${escapeHtml(award.label)} full size">
+            <img src="${escapeHtml(award.image)}" alt="${escapeHtml(award.label)}" width="${award.width}" height="${award.height}" loading="lazy" decoding="async">
+          </a>
+        `).join("")}
+      </div>
+    </section>
+
     <section class="manifesto section-shell">
       <p>We don't wait for the market to give us a fair shot. We make one.</p>
     </section>
@@ -98,12 +112,15 @@ function renderProject(campaign) {
   document.title = `${campaign.title} | ${portfolio.name}`;
   backButton.hidden = false;
 
-  const sectionEntries = [
-    ["01", "Context", campaign.sections.context],
-    ["02", "Insight", campaign.sections.insight],
-    ["03", "Idea", campaign.sections.idea],
-    ["04", "Creative Expression", campaign.sections.expression],
-  ].filter(([, , copy]) => copy && !copy.startsWith("[PLACEHOLDER]"));
+  const sectionEntries = (campaign.storySections
+    ? campaign.storySections.map(([label, copy], index) => [String(index + 1).padStart(2, "0"), label, copy])
+    : [
+        ["01", "Context", campaign.sections.context],
+        ["02", "Insight", campaign.sections.insight],
+        ["03", "Idea", campaign.sections.idea],
+        ["04", "Creative Expression", campaign.sections.expression],
+      ]).filter(([, , copy]) => copy && !copy.startsWith("[PLACEHOLDER]"));
+  const creativeSectionNumber = String(sectionEntries.length + 1).padStart(2, "0");
 
   main.innerHTML = `
     <article class="case-study">
@@ -135,7 +152,7 @@ function renderProject(campaign) {
       <div class="case-layout">
         <aside class="case-nav" aria-label="Case study sections">
           ${sectionEntries.map(([number, label]) => `<a href="#section-${number}" data-section="section-${number}">${escapeHtml(label)}</a>`).join("")}
-          ${campaign.creatives.some((item) => item.image) || campaign.tvcUrl ? `<a href="#section-05" data-section="section-05">${campaign.tvcUrl && !campaign.coverImage ? "Campaign Film" : "The Creatives"}</a>` : ""}
+          ${campaign.creatives.some((item) => item.image) || campaign.tvcUrl ? `<a href="#section-${creativeSectionNumber}" data-section="section-${creativeSectionNumber}">${campaign.tvcUrl && !campaign.coverImage ? "IMC & Campaign Film" : "The Creatives"}</a>` : ""}
         </aside>
 
         <div class="case-content">
@@ -146,8 +163,8 @@ function renderProject(campaign) {
             </section>
           `).join("")}
 
-          <section id="section-05" class="case-section creatives-section" ${!campaign.creatives.some((item) => item.image) && !campaign.tvcUrl ? "hidden" : ""}>
-            <div class="case-section-title"><span>05</span><h2>${campaign.creatives.some((item) => item.image) ? "The Creatives" : "Campaign Film"}</h2></div>
+          <section id="section-${creativeSectionNumber}" class="case-section creatives-section" ${!campaign.creatives.some((item) => item.image) && !campaign.tvcUrl ? "hidden" : ""}>
+            <div class="case-section-title"><span>${creativeSectionNumber}</span><h2>${campaign.creatives.some((item) => item.image) ? "IMC" : "Campaign Film"}</h2></div>
 
             <div class="creative-grid">
               ${campaign.creatives.filter((creative) => creative.image).map((creative) => `

@@ -14,6 +14,33 @@ export const portfolio = {
   ]
 };
 
+export const awardHighlights = [
+  {
+    image: "assets/awards/dragons-of-pakistan-2026.png",
+    label: "Dragons of Pakistan 2026 — nine telecom awards",
+    width: 837,
+    height: 1048,
+  },
+  {
+    image: "assets/awards/effie-marketer-of-the-year.png",
+    label: "Effie Awards — Best Marketer of the Year",
+    width: 837,
+    height: 1047,
+  },
+  {
+    image: "assets/awards/pakistan-digital-awards.png",
+    label: "Pakistan Digital Awards — six campaign wins",
+    width: 836,
+    height: 1017,
+  },
+  {
+    image: "assets/awards/dragons-of-pakistan-2025.png",
+    label: "Dragons of Pakistan 2025 — four campaign awards",
+    width: 842,
+    height: 997,
+  },
+];
+
 export const campaigns = [
   {
     "id": 5,
@@ -22,7 +49,7 @@ export const campaigns = [
     "title": "Call More Than Ever Before",
     "client": "Ufone × Telenor",
     "year": "",
-    "tagline": "Fawad Khan and Ali Zafar bring Ufone and Telenor together as one calling family of 7 Crore+.",
+    "tagline": "Bigger Calling Family",
     "capabilities": [
       "TVC",
       "IMC",
@@ -39,7 +66,28 @@ export const campaigns = [
       "idea": "Reframe the network integration as the birth of Pakistan's biggest calling family: 7 crore plus people, now closer than ever. Fawad Khan and Ali Zafar appear as co-equal faces from two networks, brought together in one frame.",
       "expression": "A nationwide IMC platform built on warmth, scale, and recognisable Pakistani family humour. TVC, outdoor, retail, digital, PR, and activation all present the network integration as a welcoming family reunion instead of a corporate announcement."
     },
+    "storySections": [
+      ["Campaign Idea & TVC", "Bigger Calling Family"],
+      ["Creative Expression", "Call More Than Ever Before"],
+      ["Cultural Context", "Pakistan mein family chhoti nahi hoti, na hi har rishta sirf khoon ka hota hai.\n\nFriends bhi family, colleagues bhi family, poora contact list… family.\n\nAur jab koi mushkil parr jaye… toh pooori family ko yaad kiya jata hai."],
+      ["Category Context", "A call isn’t just conversation. It’s how we ask for help.\n\n“Yaar, I needed a favour…”\n“Uncle, just a small request…”\n\nCalls don’t just connect voices—they unlock people."],
+      ["Insight for TVC", "We call the people we trust in times of need, but the more people we’re connected to, the more support we actually have."],
+      ["Brand Offering", "Ufone and Telenor together now form a network of 70 million people.\n\nWhich means:\n\nMore people\nMore reach\nMore chances someone will pick up"],
+      ["Creative Leap", "When your family becomes this big, even the impossible starts to feel possible."],
+      ["Film Setup", "A situation where:\n\nThe stakes are high\nTime is running out\nThe problem feels impossible\n\nAnd the only thing the hero has… is his phone."],
+      ["Cast Reveal", "Starring, for the first time ever on screen, with…\n\nFawad Khan\nAli Zafar"]
+    ],
     "creatives": [
+      { "type": "IMC", "format": "Social post", "label": "Things That Go Together", "image": "assets/campaigns/call-more-than-ever-before/things-that-go-together.png", "width": 842, "height": 1047 },
+      { "type": "IMC", "format": "Social post", "label": "I Can't Meet, I Have Plans", "image": "assets/campaigns/call-more-than-ever-before/i-have-plans.png", "width": 833, "height": 1043 },
+      { "type": "IMC", "format": "Social post", "label": "One Brotherhood", "image": "assets/campaigns/call-more-than-ever-before/brothers-day.png", "width": 837, "height": 1046 },
+      { "type": "IMC", "format": "Social post", "label": "Don't Swipe", "image": "assets/campaigns/call-more-than-ever-before/dont-swipe.png", "width": 837, "height": 1043 },
+      { "type": "IMC", "format": "Social post", "label": "How Big Is Our Calling Family?", "image": "assets/campaigns/call-more-than-ever-before/calling-family-question.png", "width": 828, "height": 1026 },
+      { "type": "IMC", "format": "Social post", "label": "Calling Family — Population Scale", "image": "assets/campaigns/call-more-than-ever-before/population-scale.png", "width": 835, "height": 978 },
+      { "type": "IMC", "format": "Social post", "label": "Calling Family — Aircraft Scale", "image": "assets/campaigns/call-more-than-ever-before/aircraft-scale.png", "width": 827, "height": 1042 },
+      { "type": "IMC", "format": "Social post", "label": "Calling Family — Stadium Scale", "image": "assets/campaigns/call-more-than-ever-before/stadium-scale.png", "width": 818, "height": 1013 },
+      { "type": "IMC", "format": "Social post", "label": "That's How Big Our Calling Family Is", "image": "assets/campaigns/call-more-than-ever-before/calling-family-reveal.png", "width": 803, "height": 983 },
+      { "type": "IMC", "format": "Master visual", "label": "7 Crore+ Ki Calling Family", "image": "assets/campaigns/call-more-than-ever-before/master-visual.png", "width": 842, "height": 1015 },
       {
         "type": "Hero TVC",
         "format": "60 seconds",
@@ -100,7 +148,28 @@ export const campaigns = [
       "idea": "Pakistan Ki Pehchaan: a storytelling platform that makes PTCL Group the enabler of national pride, not merely its sponsor. By bringing untold athlete journeys to light, the brand earns its position without making the story about itself.",
       "expression": "Documentary-style films rooted in real journeys. No actors and no manufactured heroics. Real athletes, archival textures, natural light, and vernacular Urdu poetry create a visual language that feels honest. The brand remains a thread through the story, not a billboard placed over it."
     },
+    "storySections": [
+      ["Big Idea", "Represent Pakistan"],
+      ["Creative Expression", "Pakistan Ki Pehchaan"],
+      ["Campaign Evolution", "Hockey Hai Pakistan Ki Shaan began as a focused celebration of Pakistan’s national game and the players carrying its legacy forward. It evolved into Pakistan Ki Pehchaan: a bigger platform dedicated to athletes across disciplines who have been winning for Pakistan and representing the country, often without the support, spotlight, or recognition they deserve."],
+      ["The Spotlight", "From hockey and volleyball to squash, snooker, esports, and javelin, the campaign brings underrated and lesser-known Pakistani athletes into the national conversation. It recognises not only established champions, but the emerging names whose achievements are shaping Pakistan’s sporting identity." ]
+    ],
     "creatives": [
+      { "type": "Campaign Evolution", "format": "Social post", "label": "Our Team, Our Pride — FIH Nations Cup", "image": "assets/campaigns/pakistan-ki-pehchaan/hockey-team-pride.png", "width": 838, "height": 1047 },
+      { "type": "Campaign Platform", "format": "Social post", "label": "Hockey Hai Pakistan Ki Shaan", "image": "assets/campaigns/pakistan-ki-pehchaan/hockey-hai-pakistan-ki-shaan.png", "width": 833, "height": 1047 },
+      { "type": "Campaign Evolution", "format": "Social post", "label": "Semi-Finals, Here We Come", "image": "assets/campaigns/pakistan-ki-pehchaan/hockey-semi-finals.png", "width": 838, "height": 1042 },
+      { "type": "Campaign Evolution", "format": "Social post", "label": "Ready for the Semis", "image": "assets/campaigns/pakistan-ki-pehchaan/hockey-ready-for-semis.png", "width": 817, "height": 1031 },
+      { "type": "Campaign Evolution", "format": "Social post", "label": "Into the Final", "image": "assets/campaigns/pakistan-ki-pehchaan/hockey-into-final.png", "width": 828, "height": 1050 },
+      { "type": "Campaign Evolution", "format": "Social post", "label": "FIH Nations Cup Runners Up", "image": "assets/campaigns/pakistan-ki-pehchaan/hockey-runners-up.png", "width": 833, "height": 1038 },
+      { "type": "Athlete Spotlight", "format": "Social post", "label": "Pakistan U16 Volleyball Champions", "image": "assets/campaigns/pakistan-ki-pehchaan/volleyball-champions.png", "width": 817, "height": 1033 },
+      { "type": "Athlete Spotlight", "format": "Social post", "label": "Two Crowns, One Nation — Snooker", "image": "assets/campaigns/pakistan-ki-pehchaan/snooker-world-champions.png", "width": 825, "height": 1015 },
+      { "type": "Athlete Spotlight", "format": "Social post", "label": "Pakistan Ki Pehchaan — Noor Zaman", "image": "assets/campaigns/pakistan-ki-pehchaan/noor-zaman.png", "width": 832, "height": 1026 },
+      { "type": "Master Visual", "format": "Social post", "label": "Pakistan Ki Pehchaan — Champions Across Sports", "image": "assets/campaigns/pakistan-ki-pehchaan/master-athletes.png", "width": 822, "height": 1027 },
+      { "type": "National Moment", "format": "Social post", "label": "Defence Day — Pakistan Ki Pehchaan", "image": "assets/campaigns/pakistan-ki-pehchaan/defence-day.png", "width": 837, "height": 1032 },
+      { "type": "Campaign Platform", "format": "Social post", "label": "Represent Pakistan", "image": "assets/campaigns/pakistan-ki-pehchaan/represent-pakistan.png", "width": 828, "height": 1033 },
+      { "type": "Athlete Series", "format": "Social carousel", "label": "Meet Pakistan Ki Pehchaan", "image": "assets/campaigns/pakistan-ki-pehchaan/athlete-series.png", "width": 832, "height": 687 },
+      { "type": "Legend Card", "format": "Social carousel", "label": "Jahangir Khan — The Invincible Legend", "image": "assets/campaigns/pakistan-ki-pehchaan/jahangir-khan-card.png", "width": 833, "height": 507 },
+      { "type": "Champion Card", "format": "Social carousel", "label": "Arshad Nadeem — Javelin Throw", "image": "assets/campaigns/pakistan-ki-pehchaan/arshad-nadeem-card.png", "width": 1122, "height": 697 },
       {
         "type": "Hero TVC",
         "format": "90-second film",
@@ -132,23 +201,6 @@ export const campaigns = [
         "label": "Independence Day campaign rollout"
       }
     ],
-    "category": "Campaigns"
-  },
-  {
-    "id": 8,
-    "slug": "super-5-legends-selection",
-    "title": "Super 5 Legends Selection",
-    "tagline": "Ufone’s Super 5 campaign film, centred on “Legends Selection.”",
-    "client": "Ufone",
-    "year": "",
-    "capabilities": [
-      "Film"
-    ],
-    "tvcUrl": "https://www.youtube.com/watch?v=i2TlgAhU8cU",
-    "tvcLabel": "Watch film",
-    "sections": {},
-    "creatives": [],
-    "number": "03",
     "category": "Campaigns"
   },
   {
@@ -376,6 +428,77 @@ export const campaigns = [
     "category": "Archive"
   },
   {
+    "id": 10,
+    "number": "06",
+    "slug": "important-days",
+    "title": "Important Days to Communicate About",
+    "client": "Ufone / PTCL / Telenor",
+    "year": "",
+    "tagline": "I have written copy and given creative direction for almost all national and international days, published as smaller campaigns.",
+    "capabilities": [
+      "Copywriting",
+      "Creative Direction",
+      "Social",
+      "Digital"
+    ],
+    "tvcUrl": "",
+    "tvcLabel": "",
+    "sections": {
+      "context": "I have written copy and given creative direction for almost all national and international days, published as smaller campaigns. Each moment called for its own tone and cultural lens while staying true to the brands behind it."
+    },
+    "creatives": [
+      {
+        "type": "Important Day",
+        "format": "Social post",
+        "label": "Independence Day — Our Land, Our Pride, Our Connection",
+        "image": "assets/campaigns/important-days/independence-day-connection.png",
+        "width": 830,
+        "height": 1027
+      },
+      {
+        "type": "Important Day",
+        "format": "Social post",
+        "label": "International Olympic Day — Celebrating a National Hero",
+        "image": "assets/campaigns/important-days/olympic-day.png",
+        "width": 836,
+        "height": 1031
+      },
+      {
+        "type": "Important Day",
+        "format": "Social post",
+        "label": "Independence Day — More Dreams and More Possibilities",
+        "image": "assets/campaigns/important-days/independence-day-more-for-pakistan.png",
+        "width": 850,
+        "height": 1052
+      },
+      {
+        "type": "Important Day",
+        "format": "Social post",
+        "label": "Defence Day — Pakistan Ki Pehchaan",
+        "image": "assets/campaigns/important-days/defence-day.png",
+        "width": 837,
+        "height": 1032
+      },
+      {
+        "type": "Important Day",
+        "format": "Social post",
+        "label": "Iqbal Day — The Truest Connection",
+        "image": "assets/campaigns/important-days/iqbal-day.png",
+        "width": 828,
+        "height": 1032
+      },
+      {
+        "type": "Important Day",
+        "format": "Social post",
+        "label": "Eid ul Azha — Celebrating Sacrifice and Connection",
+        "image": "assets/campaigns/important-days/eid-ul-azha.png",
+        "width": 842,
+        "height": 1042
+      }
+    ],
+    "category": "Archive"
+  },
+  {
     "id": 7,
     "number": "09",
     "slug": "fathers-day",
@@ -405,8 +528,51 @@ export const campaigns = [
       },
       {
         "type": "Key Visual",
-        "format": "Ufone and PTCL",
-        "label": "Dual-brand master artwork"
+        "format": "Portrait artwork",
+        "label": "The sacrifices behind every small wish",
+        "image": "assets/campaigns/fathers-day/sacrifice-gift.png",
+        "width": 837,
+        "height": 1037
+      },
+      {
+        "type": "Key Visual",
+        "format": "Portrait artwork",
+        "label": "A father placing a child's wishes first",
+        "image": "assets/campaigns/fathers-day/toy-car.png",
+        "width": 837,
+        "height": 1050
+      },
+      {
+        "type": "Key Visual",
+        "format": "Portrait artwork",
+        "label": "Hands that gave more than they ever had",
+        "image": "assets/campaigns/fathers-day/doll-gift.png",
+        "width": 837,
+        "height": 1043
+      },
+      {
+        "type": "Key Visual",
+        "format": "Portrait artwork",
+        "label": "A father's steady hand on the bicycle",
+        "image": "assets/campaigns/fathers-day/bicycle.png",
+        "width": 842,
+        "height": 1051
+      },
+      {
+        "type": "Key Visual",
+        "format": "Portrait artwork",
+        "label": "A father bringing light to every lesson",
+        "image": "assets/campaigns/fathers-day/study-light.png",
+        "width": 821,
+        "height": 1046
+      },
+      {
+        "type": "Key Visual",
+        "format": "Portrait artwork",
+        "label": "A father's hands at his daughter's wedding",
+        "image": "assets/campaigns/fathers-day/wedding-bangles.png",
+        "width": 840,
+        "height": 1042
       },
       {
         "type": "Social Posts",
@@ -426,7 +592,11 @@ export const campaigns = [
     ],
     "category": "Archive"
   }
-];
+].filter(({ slug }) => ![
+  "minutes-bohhaaat-hain",
+  "super-5",
+  "regional-offer-kvs",
+].includes(slug));
 
 export function getCampaignBySlug(slug) {
   return campaigns.find((campaign) => campaign.slug === slug) ?? null;
