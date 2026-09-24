@@ -14,6 +14,33 @@ export const portfolio = {
   ]
 };
 
+export const awardHighlights = [
+  {
+    image: "assets/awards/dragons-of-pakistan-2026.png",
+    label: "Dragons of Pakistan 2026 — nine telecom awards",
+    width: 837,
+    height: 1048,
+  },
+  {
+    image: "assets/awards/effie-marketer-of-the-year.png",
+    label: "Effie Awards — Best Marketer of the Year",
+    width: 837,
+    height: 1047,
+  },
+  {
+    image: "assets/awards/pakistan-digital-awards.png",
+    label: "Pakistan Digital Awards — six campaign wins",
+    width: 836,
+    height: 1017,
+  },
+  {
+    image: "assets/awards/dragons-of-pakistan-2025.png",
+    label: "Dragons of Pakistan 2025 — four campaign awards",
+    width: 842,
+    height: 997,
+  },
+];
+
 export const campaigns = [
   {
     "id": 5,

@@ -1,4 +1,4 @@
-import { campaigns, getCampaignBySlug, portfolio } from "./campaigns.js";
+import { awardHighlights, campaigns, getCampaignBySlug, portfolio } from "./campaigns.js";
 
 const main = document.querySelector("#main-content");
 const backButton = document.querySelector(".back-button");
@@ -80,6 +80,20 @@ function renderHome() {
               <span class="work-meta"><span class="work-tags">${capabilityTags(campaign.capabilities.slice(0, 3))}</span><b aria-hidden="true">→</b></span>
             </button>
           </article>
+        `).join("")}
+      </div>
+    </section>
+
+    <section class="awards section-shell" aria-labelledby="awards-title">
+      <div class="awards-heading">
+        <p class="eyebrow">Recognition</p>
+        <h2 id="awards-title">Awards do matter<br>when they are <span>gold.</span></h2>
+      </div>
+      <div class="awards-grid">
+        ${awardHighlights.map((award) => `
+          <a class="award-card" href="${escapeHtml(award.image)}" data-lightbox="${escapeHtml(award.label)}" aria-label="View ${escapeHtml(award.label)} full size">
+            <img src="${escapeHtml(award.image)}" alt="${escapeHtml(award.label)}" width="${award.width}" height="${award.height}" loading="lazy" decoding="async">
+          </a>
         `).join("")}
       </div>
     </section>
