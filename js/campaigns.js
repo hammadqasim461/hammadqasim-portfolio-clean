@@ -49,7 +49,7 @@ export const campaigns = [
     "title": "Call More Than Ever Before",
     "client": "Ufone × Telenor",
     "year": "",
-    "tagline": "Fawad Khan and Ali Zafar bring Ufone and Telenor together as one calling family of 7 Crore+.",
+    "tagline": "Bigger Calling Family",
     "capabilities": [
       "TVC",
       "IMC",
@@ -66,7 +66,28 @@ export const campaigns = [
       "idea": "Reframe the network integration as the birth of Pakistan's biggest calling family: 7 crore plus people, now closer than ever. Fawad Khan and Ali Zafar appear as co-equal faces from two networks, brought together in one frame.",
       "expression": "A nationwide IMC platform built on warmth, scale, and recognisable Pakistani family humour. TVC, outdoor, retail, digital, PR, and activation all present the network integration as a welcoming family reunion instead of a corporate announcement."
     },
+    "storySections": [
+      ["Campaign Idea & TVC", "Bigger Calling Family"],
+      ["Creative Expression", "Call More Than Ever Before"],
+      ["Cultural Context", "Pakistan mein family chhoti nahi hoti, na hi har rishta sirf khoon ka hota hai.\n\nFriends bhi family, colleagues bhi family, poora contact list… family.\n\nAur jab koi mushkil parr jaye… toh pooori family ko yaad kiya jata hai."],
+      ["Category Context", "A call isn’t just conversation. It’s how we ask for help.\n\n“Yaar, I needed a favour…”\n“Uncle, just a small request…”\n\nCalls don’t just connect voices—they unlock people."],
+      ["Insight for TVC", "We call the people we trust in times of need, but the more people we’re connected to, the more support we actually have."],
+      ["Brand Offering", "Ufone and Telenor together now form a network of 70 million people.\n\nWhich means:\n\nMore people\nMore reach\nMore chances someone will pick up"],
+      ["Creative Leap", "When your family becomes this big, even the impossible starts to feel possible."],
+      ["Film Setup", "A situation where:\n\nThe stakes are high\nTime is running out\nThe problem feels impossible\n\nAnd the only thing the hero has… is his phone."],
+      ["Cast Reveal", "Starring, for the first time ever on screen, with…\n\nFawad Khan\nAli Zafar"]
+    ],
     "creatives": [
+      { "type": "IMC", "format": "Social post", "label": "Things That Go Together", "image": "assets/campaigns/call-more-than-ever-before/things-that-go-together.png", "width": 842, "height": 1047 },
+      { "type": "IMC", "format": "Social post", "label": "I Can't Meet, I Have Plans", "image": "assets/campaigns/call-more-than-ever-before/i-have-plans.png", "width": 833, "height": 1043 },
+      { "type": "IMC", "format": "Social post", "label": "One Brotherhood", "image": "assets/campaigns/call-more-than-ever-before/brothers-day.png", "width": 837, "height": 1046 },
+      { "type": "IMC", "format": "Social post", "label": "Don't Swipe", "image": "assets/campaigns/call-more-than-ever-before/dont-swipe.png", "width": 837, "height": 1043 },
+      { "type": "IMC", "format": "Social post", "label": "How Big Is Our Calling Family?", "image": "assets/campaigns/call-more-than-ever-before/calling-family-question.png", "width": 828, "height": 1026 },
+      { "type": "IMC", "format": "Social post", "label": "Calling Family — Population Scale", "image": "assets/campaigns/call-more-than-ever-before/population-scale.png", "width": 835, "height": 978 },
+      { "type": "IMC", "format": "Social post", "label": "Calling Family — Aircraft Scale", "image": "assets/campaigns/call-more-than-ever-before/aircraft-scale.png", "width": 827, "height": 1042 },
+      { "type": "IMC", "format": "Social post", "label": "Calling Family — Stadium Scale", "image": "assets/campaigns/call-more-than-ever-before/stadium-scale.png", "width": 818, "height": 1013 },
+      { "type": "IMC", "format": "Social post", "label": "That's How Big Our Calling Family Is", "image": "assets/campaigns/call-more-than-ever-before/calling-family-reveal.png", "width": 803, "height": 983 },
+      { "type": "IMC", "format": "Master visual", "label": "7 Crore+ Ki Calling Family", "image": "assets/campaigns/call-more-than-ever-before/master-visual.png", "width": 842, "height": 1015 },
       {
         "type": "Hero TVC",
         "format": "60 seconds",
