@@ -148,7 +148,28 @@ export const campaigns = [
       "idea": "Pakistan Ki Pehchaan: a storytelling platform that makes PTCL Group the enabler of national pride, not merely its sponsor. By bringing untold athlete journeys to light, the brand earns its position without making the story about itself.",
       "expression": "Documentary-style films rooted in real journeys. No actors and no manufactured heroics. Real athletes, archival textures, natural light, and vernacular Urdu poetry create a visual language that feels honest. The brand remains a thread through the story, not a billboard placed over it."
     },
+    "storySections": [
+      ["Big Idea", "Represent Pakistan"],
+      ["Creative Expression", "Pakistan Ki Pehchaan"],
+      ["Campaign Evolution", "Hockey Hai Pakistan Ki Shaan began as a focused celebration of Pakistan’s national game and the players carrying its legacy forward. It evolved into Pakistan Ki Pehchaan: a bigger platform dedicated to athletes across disciplines who have been winning for Pakistan and representing the country, often without the support, spotlight, or recognition they deserve."],
+      ["The Spotlight", "From hockey and volleyball to squash, snooker, esports, and javelin, the campaign brings underrated and lesser-known Pakistani athletes into the national conversation. It recognises not only established champions, but the emerging names whose achievements are shaping Pakistan’s sporting identity." ]
+    ],
     "creatives": [
+      { "type": "Campaign Evolution", "format": "Social post", "label": "Our Team, Our Pride — FIH Nations Cup", "image": "assets/campaigns/pakistan-ki-pehchaan/hockey-team-pride.png", "width": 838, "height": 1047 },
+      { "type": "Campaign Platform", "format": "Social post", "label": "Hockey Hai Pakistan Ki Shaan", "image": "assets/campaigns/pakistan-ki-pehchaan/hockey-hai-pakistan-ki-shaan.png", "width": 833, "height": 1047 },
+      { "type": "Campaign Evolution", "format": "Social post", "label": "Semi-Finals, Here We Come", "image": "assets/campaigns/pakistan-ki-pehchaan/hockey-semi-finals.png", "width": 838, "height": 1042 },
+      { "type": "Campaign Evolution", "format": "Social post", "label": "Ready for the Semis", "image": "assets/campaigns/pakistan-ki-pehchaan/hockey-ready-for-semis.png", "width": 817, "height": 1031 },
+      { "type": "Campaign Evolution", "format": "Social post", "label": "Into the Final", "image": "assets/campaigns/pakistan-ki-pehchaan/hockey-into-final.png", "width": 828, "height": 1050 },
+      { "type": "Campaign Evolution", "format": "Social post", "label": "FIH Nations Cup Runners Up", "image": "assets/campaigns/pakistan-ki-pehchaan/hockey-runners-up.png", "width": 833, "height": 1038 },
+      { "type": "Athlete Spotlight", "format": "Social post", "label": "Pakistan U16 Volleyball Champions", "image": "assets/campaigns/pakistan-ki-pehchaan/volleyball-champions.png", "width": 817, "height": 1033 },
+      { "type": "Athlete Spotlight", "format": "Social post", "label": "Two Crowns, One Nation — Snooker", "image": "assets/campaigns/pakistan-ki-pehchaan/snooker-world-champions.png", "width": 825, "height": 1015 },
+      { "type": "Athlete Spotlight", "format": "Social post", "label": "Pakistan Ki Pehchaan — Noor Zaman", "image": "assets/campaigns/pakistan-ki-pehchaan/noor-zaman.png", "width": 832, "height": 1026 },
+      { "type": "Master Visual", "format": "Social post", "label": "Pakistan Ki Pehchaan — Champions Across Sports", "image": "assets/campaigns/pakistan-ki-pehchaan/master-athletes.png", "width": 822, "height": 1027 },
+      { "type": "National Moment", "format": "Social post", "label": "Defence Day — Pakistan Ki Pehchaan", "image": "assets/campaigns/pakistan-ki-pehchaan/defence-day.png", "width": 837, "height": 1032 },
+      { "type": "Campaign Platform", "format": "Social post", "label": "Represent Pakistan", "image": "assets/campaigns/pakistan-ki-pehchaan/represent-pakistan.png", "width": 828, "height": 1033 },
+      { "type": "Athlete Series", "format": "Social carousel", "label": "Meet Pakistan Ki Pehchaan", "image": "assets/campaigns/pakistan-ki-pehchaan/athlete-series.png", "width": 832, "height": 687 },
+      { "type": "Legend Card", "format": "Social carousel", "label": "Jahangir Khan — The Invincible Legend", "image": "assets/campaigns/pakistan-ki-pehchaan/jahangir-khan-card.png", "width": 833, "height": 507 },
+      { "type": "Champion Card", "format": "Social carousel", "label": "Arshad Nadeem — Javelin Throw", "image": "assets/campaigns/pakistan-ki-pehchaan/arshad-nadeem-card.png", "width": 1122, "height": 697 },
       {
         "type": "Hero TVC",
         "format": "90-second film",
